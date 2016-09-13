@@ -1,0 +1,20 @@
+﻿using UnityEngine;
+
+public class MenuPauseAndLoadLevel : MonoBehaviour
+{
+
+    public string levelToLoad;
+    public float delay = 2f;
+
+    // use invoke to wait for a delay then call LoadLevel
+    void Update()
+    {
+        Invoke("LoadLevel", delay);
+    }
+
+    // load the specified level
+    void LoadLevel()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(levelToLoad);
+    }
+}
